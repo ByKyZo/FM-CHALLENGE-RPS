@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; position: absolute; bottom: 5px; width: 100%;text-transform: none;}
+    .attribution a { color: hsl(228, 45%, 44%);text-transform: none; }
+  </style>
+
+</head>
+<body>
+
+  <div id="game" class="game">
+
+    <div class="game__header">
+
+      <ul class="game__header__title"> <!--A CHANGE EN LOGO SVG IMPORTANT-->
+        <li>Rock</li>
+        <li>Paper</li>
+        <li>Scissors</li>
+      </ul>
+
+      <div class="game__header__score">
+
+        <div class="game__header__score__title">Score</div> 
+        <span id="score">11</span>
+
+      </div>
+
+    </div>
+
+    <div id="game-content" class="game__content">
+
+      <img id="triangle" src="./images/bg-triangle.svg" alt="">
+
+      <div id="paper" class="game__content__hands game__content__hands--paper paper-hand">
+
+        <img src="./images/icon-paper.svg" alt="">
+
+      </div>
+
+      <div id="scissors" class="game__content__hands game__content__hands--scissors scissors-hand">
+
+        <img src="./images/icon-scissors.svg" alt="">
+
+      </div>
+
+      <div id="rock" class="game__content__hands game__content__hands--rock rock-hand">
+
+        <img src="./images/icon-rock.svg" alt="">
+
+      </div>
+
+    </div>
+
+    <div id="fight-area" class="d-none"></div>
+
+
+    <button id="btn-rules" class="game__btn-rules">Rules</button> 
+
+    <div id="rules" class="background-rules d-none">
+
+      <div class="game__rules">
+
+        <div class="game__rules__header">
+
+          <h2>Rules</h2>
+
+          <img id="close" src="./images/icon-close.svg" alt="">
+
+        </div>
+
+        <img src="./images/image-rules.svg" alt="">
+
+      </div>
+
+    </div>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.frontendmentor.io/profile/ByKyZo">Alex</a>.
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>

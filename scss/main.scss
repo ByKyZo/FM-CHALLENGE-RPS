@@ -1,0 +1,79 @@
+@import "./variables";
+@import "./base";
+@import "./rules";
+@import "./game__hands";
+@import "./animations";
+
+.game{
+    height: 100vh;
+    background: radial-gradient(circle, rgba(29,48,80,1) 25%, rgba(21,25,60,1) 100%); // A VOIR
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    &__header{
+        width: 700px;
+        height: 150px;
+        border: 3px solid $HeaderOutline; // A VOIR
+        border-radius: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px;
+        margin: 0 20px;
+        &__title{
+            font-size: 2.5rem;
+            line-height: 33px;
+            font-weight: bold;
+        }
+        &__score{
+            background-color: rgb(250, 250, 250);
+            height: 115px;
+            width: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 9px;
+            &__title{
+                color: $ScoreText;
+                font-size: 1.1rem; // AVOIR
+                letter-spacing: 2px;
+            }
+            #score{
+                color: $DarkText;
+                font-size: 4rem;
+                font-weight: bold;
+            }
+        }
+    }
+    &__content{
+        position: relative;
+        display: flex; // A VOIR
+        &__hands{
+            cursor: pointer;
+            position: absolute;
+            &:hover{
+                transform: scale(1.05);
+                transition: 0.3s;
+            }
+            &:active{
+                transform: scale(0.9);
+                transition: 0.1s;
+            }
+            &--paper{
+                top: -70px ;
+                left: -60px ;
+            }
+            &--scissors{
+                top: -70px ;
+                right: -60px ;
+            }
+            &--rock{
+                bottom: -25px ;
+                left: 70px ;
+            }
+        }
+    }
+}

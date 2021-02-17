@@ -1,0 +1,61 @@
+@keyframes mooveHand {
+    0%{
+        transform: scale(0.5);
+    }
+    100%{
+        transform: scale(1.5);
+    }
+}
+
+@keyframes textPlayerAnimation {
+    0%{
+        transform: scale(0);
+        backface-visibility: hidden;
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes roundEnd {
+    0%{
+        width: 500px;
+    }
+    100%{
+        width: 800px;
+    }
+}
+.animationRoundEnd{
+    animation: 1s roundEnd forwards;
+}
+
+@keyframes winAnimation{
+    0%{
+        transform: scale(1.5);
+        box-shadow: 
+        // 0 10px 0 #2945c2,
+        0 0 0 60px rgba(255,255,255, .06),    
+        0 0 0 125px rgba(255,255,255, .04),
+        0 0 0 200px rgba(255,255,255, .02);
+    }
+    // 50%{
+    //     box-shadow: 
+    //     0 0 0 62px rgba(255,255,255, .08),    
+    //     0 0 0 127px rgba(255,255,255, .1),
+    //     0 0 0 202px rgba(255,255,255, .06);
+    // }
+    100%{
+        transform: scale(1.5);
+        box-shadow: 
+        // 0 10px 0 #2945c2,
+        0 0 0 70px rgba(255,255,255, .08),    
+        0 0 0 135px rgba(255,255,255, .06),
+        0 0 0 210px rgba(255,255,255, .04);
+    }
+}
+
+.animatedWin{
+    animation: winAnimation 0.5s infinite alternate;
+}

@@ -1,0 +1,19 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: uppercase;
+}
+
+ul{
+    list-style: none;
+}
+
+html{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    color: white;
+}
+
+// body{
+//     height: 100vh;
+// }

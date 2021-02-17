@@ -1,0 +1,67 @@
+.game{
+    &__btn-rules{
+        cursor: pointer;
+        border: 2px solid white; // A VOIR LES COULEURS
+        background: transparent;
+        color: white; 
+        padding: 12px 36px;
+        border-radius: 7px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        position: absolute;
+        right: 31px;
+        bottom: 31px;
+        &:hover{
+            transition: 0.3s;
+            background-color: white;
+            color: $DarkText;
+        }
+    }
+    .background-rules{
+        height: 100vh;
+        width: 100%;
+        background-color: rgba(0, 0, 0, .6);
+        opacity: 3;
+        position: absolute;
+        z-index: 999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__rules{
+        position: absolute;
+        padding: 35px;
+        z-index: 9999;
+        background-color: white;
+        border-radius: 10px;
+        color: $DarkText;
+        height: 415px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        &__header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 45px;
+            width: 100%;
+            h2{
+                font-size: 2rem;
+            }
+            #close{
+                cursor: pointer;
+                transition: 0.3s;
+                &:hover{
+                    transition: 0.3s;
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}
+
+.d-none{
+    display: none !important;
+}
