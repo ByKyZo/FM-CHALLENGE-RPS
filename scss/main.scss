@@ -22,10 +22,13 @@
         align-items: center;
         padding: 25px;
         margin: 0 20px;
-        &__title{
-            font-size: 2.5rem;
-            line-height: 33px;
-            font-weight: bold;
+        @media (max-width: 730px){
+            width: 90%;
+        }
+        &__logo{
+            img{
+                width: 100%;
+            }
         }
         &__score{
             background-color: rgb(250, 250, 250);
@@ -36,21 +39,35 @@
             justify-content: center;
             align-items: center;
             border-radius: 9px;
+            margin-left: 60px;
             &__title{
                 color: $ScoreText;
                 font-size: 1.1rem; // AVOIR
                 letter-spacing: 2px;
+                @media (max-width: 730px){
+                    font-size: 0.9rem;
+                }
             }
             #score{
                 color: $DarkText;
                 font-size: 4rem;
                 font-weight: bold;
+                @media (max-width: 730px){
+                    font-size: 3.5rem;
+                }
             }
         }
     }
     &__content{
         position: relative;
         display: flex; // A VOIR
+        animation: popWinAnimation 1s forwards;
+        #triangle{
+            @media (max-width: 1000px){
+                width: 215px;
+                height: 210px;
+            }
+        }
         &__hands{
             cursor: pointer;
             position: absolute;
@@ -65,14 +82,26 @@
             &--paper{
                 top: -70px ;
                 left: -60px ;
+                @media (max-width: 1000px){
+                    top: -35px;
+                    left: -30px;
+                }
             }
             &--scissors{
                 top: -70px ;
                 right: -60px ;
+                @media (max-width: 1000px){
+                    top: -35px;
+                    right: -30px;
+                }
             }
             &--rock{
                 bottom: -25px ;
                 left: 70px ;
+                @media (max-width: 1000px){
+                    bottom: 0;
+                    left: 55px ;
+                }
             }
         }
     }

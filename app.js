@@ -100,7 +100,7 @@ function startFight () {
             handBotDisplay.classList.add("animatedWin");
     
         } else {
-            isWin.innerHTML = "<span>egality</span>";
+            isWin.innerHTML = "<span>game tie</span>";
         }
 
         fScoreDisplay();

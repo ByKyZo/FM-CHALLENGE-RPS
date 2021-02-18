@@ -27,6 +27,13 @@ html {
   right: 31px;
   bottom: 31px;
 }
+@media (max-width: 1000px) {
+  .game__btn-rules {
+    right: 50%;
+    bottom: 90px;
+    transform: translateX(50%);
+  }
+}
 .game__btn-rules:hover {
   transition: 0.3s;
   background-color: white;
@@ -56,6 +63,11 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 400px) {
+  .game__rules {
+    width: 350px;
+  }
 }
 .game__rules__header {
   display: flex;
@@ -90,8 +102,14 @@ html {
   border-radius: 50%;
   background-color: white;
   box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5);
-  z-index: 10;
+  z-index: 999;
   transition: transform 0.5s;
+}
+@media (max-width: 1000px) {
+  .paper-hand {
+    height: 100px;
+    width: 100px;
+  }
 }
 .paper-hand img {
   width: 43%;
@@ -105,9 +123,27 @@ html {
   height: 99%;
   width: 99%;
   border-radius: 50%;
-  z-index: -1;
+  z-index: 999;
   border: 22px solid #4865f4;
   box-shadow: 0 10px 0 #2945c2;
+}
+@media (max-width: 1000px) {
+  .paper-hand::before {
+    top: -13px;
+    left: -13px;
+    height: 98%;
+    width: 98%;
+    border-radius: 50%;
+    z-index: -1;
+    border: 14px solid #ec9e0e;
+    box-shadow: 0 5px 0 #c66d19;
+  }
+}
+@media (max-width: 1000px) {
+  .paper-hand::before {
+    border: 14px solid #4865f4;
+    box-shadow: 0 5px 0 #2945c2;
+  }
 }
 
 .scissors-hand {
@@ -120,8 +156,14 @@ html {
   border-radius: 50%;
   background-color: white;
   box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5);
-  z-index: 10;
+  z-index: 999;
   transition: transform 0.5s;
+}
+@media (max-width: 1000px) {
+  .scissors-hand {
+    height: 100px;
+    width: 100px;
+  }
 }
 .scissors-hand img {
   width: 43%;
@@ -135,9 +177,27 @@ html {
   height: 99%;
   width: 99%;
   border-radius: 50%;
-  z-index: -1;
+  z-index: 999;
   border: 22px solid #ec9e0e;
   box-shadow: 0 10px 0 #c66d19;
+}
+@media (max-width: 1000px) {
+  .scissors-hand::before {
+    top: -13px;
+    left: -13px;
+    height: 98%;
+    width: 98%;
+    border-radius: 50%;
+    z-index: -1;
+    border: 14px solid #ec9e0e;
+    box-shadow: 0 5px 0 #c66d19;
+  }
+}
+@media (max-width: 1000px) {
+  .scissors-hand::before {
+    border: 14px solid #ec9e0e;
+    box-shadow: 0 5px 0 #c66d19;
+  }
 }
 
 .rock-hand {
@@ -150,8 +210,14 @@ html {
   border-radius: 50%;
   background-color: white;
   box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5);
-  z-index: 10;
+  z-index: 999;
   transition: transform 0.5s;
+}
+@media (max-width: 1000px) {
+  .rock-hand {
+    height: 100px;
+    width: 100px;
+  }
 }
 .rock-hand img {
   width: 43%;
@@ -165,9 +231,27 @@ html {
   height: 99%;
   width: 99%;
   border-radius: 50%;
-  z-index: -1;
+  z-index: 999;
   border: 22px solid #dc2e4e;
   box-shadow: 0 10px 0 #9c1631;
+}
+@media (max-width: 1000px) {
+  .rock-hand::before {
+    top: -13px;
+    left: -13px;
+    height: 98%;
+    width: 98%;
+    border-radius: 50%;
+    z-index: -1;
+    border: 14px solid #ec9e0e;
+    box-shadow: 0 5px 0 #c66d19;
+  }
+}
+@media (max-width: 1000px) {
+  .rock-hand::before {
+    border: 14px solid #dc2e4e;
+    box-shadow: 0 5px 0 #9c1631;
+  }
 }
 
 #fight-area {
@@ -176,9 +260,21 @@ html {
   align-items: center;
   width: 500px;
 }
+@media (max-width: 1000px) {
+  #fight-area {
+    width: 400px;
+    margin-bottom: 350px;
+    justify-content: space-around;
+  }
+}
 
 .handPlayPlayer {
   animation: mooveHand 1s forwards;
+}
+@media (max-width: 1000px) {
+  .handPlayPlayer {
+    animation: mooveHandMobile 1s forwards;
+  }
 }
 .handPlayPlayer::after {
   content: "you picked";
@@ -188,9 +284,21 @@ html {
   top: -65px;
   letter-spacing: 2px;
 }
+@media (max-width: 1000px) {
+  .handPlayPlayer::after {
+    top: unset;
+    bottom: -65px;
+    font-size: 0.7rem;
+  }
+}
 
 .handPlayBot {
   animation: 0.5s mooveHand forwards;
+}
+@media (max-width: 1000px) {
+  .handPlayBot {
+    animation: mooveHandMobile 0.5s forwards;
+  }
 }
 .handPlayBot::after {
   content: "the house picked";
@@ -201,12 +309,25 @@ html {
   top: -65px;
   letter-spacing: 2px;
 }
+@media (max-width: 1000px) {
+  .handPlayBot::after {
+    top: unset;
+    bottom: -65px;
+    font-size: 0.7rem;
+  }
+}
 
 .botPlaceHolder {
   height: 225px;
   width: 225px;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+}
+@media (max-width: 1000px) {
+  .botPlaceHolder {
+    height: 110px;
+    width: 110px;
+  }
 }
 
 .popupWinOrLoose {
@@ -215,6 +336,16 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: popWinAnimation 0.7s forwards;
+}
+@media (max-width: 1000px) {
+  .popupWinOrLoose {
+    animation: none;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 .popupWinOrLoose span {
   white-space: nowrap;
@@ -230,6 +361,12 @@ html {
   font-weight: bold;
   letter-spacing: 1px;
   width: 100%;
+  transition: 0.8s;
+}
+.popupWinOrLoose button:hover {
+  transition: 0.5s;
+  background-color: #dc2e4e;
+  color: white;
 }
 
 @keyframes mooveHand {
@@ -238,6 +375,14 @@ html {
   }
   100% {
     transform: scale(1.5);
+  }
+}
+@keyframes mooveHandMobile {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 @keyframes textPlayerAnimation {
@@ -263,20 +408,56 @@ html {
   animation: 1s roundEnd forwards;
 }
 
+@media (max-width: 1000px) {
+  .animationRoundEnd {
+    animation: none;
+  }
+}
+@media (max-width: 1000px) {
+  @keyframes winAnimation {
+    0% {
+      box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5), 0 0 0 60px rgba(255, 255, 255, 0.06), 0 0 0 125px rgba(255, 255, 255, 0.04), 0 0 0 200px rgba(255, 255, 255, 0.02);
+    }
+    100% {
+      box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5), 0 0 0 70px rgba(255, 255, 255, 0.08), 0 0 0 135px rgba(255, 255, 255, 0.06), 0 0 0 210px rgba(255, 255, 255, 0.04);
+    }
+  }
+}
 @keyframes winAnimation {
   0% {
     transform: scale(1.5);
-    box-shadow: 0 0 0 60px rgba(255, 255, 255, 0.06), 0 0 0 125px rgba(255, 255, 255, 0.04), 0 0 0 200px rgba(255, 255, 255, 0.02);
+    box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5), 0 0 0 60px rgba(255, 255, 255, 0.06), 0 0 0 125px rgba(255, 255, 255, 0.04), 0 0 0 200px rgba(255, 255, 255, 0.02);
   }
   100% {
     transform: scale(1.5);
-    box-shadow: 0 0 0 70px rgba(255, 255, 255, 0.08), 0 0 0 135px rgba(255, 255, 255, 0.06), 0 0 0 210px rgba(255, 255, 255, 0.04);
+    box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5), 0 0 0 70px rgba(255, 255, 255, 0.08), 0 0 0 135px rgba(255, 255, 255, 0.06), 0 0 0 210px rgba(255, 255, 255, 0.04);
+  }
+}
+@keyframes winAnimationMobile {
+  0% {
+    box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5), 0 0 0 60px rgba(255, 255, 255, 0.06), 0 0 0 125px rgba(255, 255, 255, 0.04), 0 0 0 200px rgba(255, 255, 255, 0.02);
+  }
+  100% {
+    box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5), 0 0 0 70px rgba(255, 255, 255, 0.08), 0 0 0 135px rgba(255, 255, 255, 0.06), 0 0 0 210px rgba(255, 255, 255, 0.04);
   }
 }
 .animatedWin {
   animation: winAnimation 0.5s infinite alternate;
 }
 
+@media (max-width: 1000px) {
+  .animatedWin {
+    animation: winAnimationMobile 0.5s infinite alternate;
+  }
+}
+@keyframes popWinAnimation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .game {
   height: 100vh;
   background: radial-gradient(circle, #1d3050 25%, #15193c 100%);
@@ -297,10 +478,13 @@ html {
   padding: 25px;
   margin: 0 20px;
 }
-.game__header__title {
-  font-size: 2.5rem;
-  line-height: 33px;
-  font-weight: bold;
+@media (max-width: 730px) {
+  .game__header {
+    width: 90%;
+  }
+}
+.game__header__logo img {
+  width: 100%;
 }
 .game__header__score {
   background-color: #fafafa;
@@ -311,20 +495,38 @@ html {
   justify-content: center;
   align-items: center;
   border-radius: 9px;
+  margin-left: 60px;
 }
 .game__header__score__title {
   color: #2a46c0;
   font-size: 1.1rem;
   letter-spacing: 2px;
 }
+@media (max-width: 730px) {
+  .game__header__score__title {
+    font-size: 0.9rem;
+  }
+}
 .game__header__score #score {
   color: #3b4363;
   font-size: 4rem;
   font-weight: bold;
 }
+@media (max-width: 730px) {
+  .game__header__score #score {
+    font-size: 3.5rem;
+  }
+}
 .game__content {
   position: relative;
   display: flex;
+  animation: popWinAnimation 1s forwards;
+}
+@media (max-width: 1000px) {
+  .game__content #triangle {
+    width: 215px;
+    height: 210px;
+  }
 }
 .game__content__hands {
   cursor: pointer;
@@ -342,13 +544,31 @@ html {
   top: -70px;
   left: -60px;
 }
+@media (max-width: 1000px) {
+  .game__content__hands--paper {
+    top: -35px;
+    left: -30px;
+  }
+}
 .game__content__hands--scissors {
   top: -70px;
   right: -60px;
 }
+@media (max-width: 1000px) {
+  .game__content__hands--scissors {
+    top: -35px;
+    right: -30px;
+  }
+}
 .game__content__hands--rock {
   bottom: -25px;
   left: 70px;
+}
+@media (max-width: 1000px) {
+  .game__content__hands--rock {
+    bottom: 0;
+    left: 55px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
