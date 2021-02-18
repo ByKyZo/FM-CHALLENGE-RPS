@@ -33,7 +33,8 @@ body{
 @media (max-width: 1000px) {
   .game__btn-rules {
     right: 50%;
-    bottom: 90px;
+/*     bottom: 90px; */
+    bottom: 50px;
     transform: translateX(50%);
   }
 }
