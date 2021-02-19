@@ -1,16 +1,17 @@
 // RULES
-const btnRules = document.querySelector("#btn-rules");
-const rules = document.querySelector("#rules");
-const closeRules = document.querySelector("#close");
-
-btnRules.addEventListener("click", () => rules.classList.remove("d-none"))
-closeRules.addEventListener("click", () => rules.classList.add("d-none"))
+document.querySelector("#btn-rules").addEventListener("click", () => document.querySelector("#rules").classList.remove("d-none"))
+document.querySelector("#close").addEventListener("click", () => document.querySelector("#rules").classList.add("d-none"))
 /////////////////////
+const game = document.querySelector("#game")
+const switchGame = document.querySelector("#switchGame");
+const gameContent = document.querySelector("#game-content");
+const gameLizardSpock = document.querySelector("#game-content-lizard-spock");
+const fightArea = document.querySelector("#fight-area");
+const scoreDisplay = document.querySelector("#score");
 
 let score = 0;
-
-const game = document.querySelector("#game")
-const scoreDisplay = document.querySelector("#score");
+let botHand = 0;
+let playerHand = 0;
 
 fScoreDisplay();
 
@@ -18,41 +19,64 @@ function fScoreDisplay (){
     scoreDisplay.innerHTML = score;
 }
 
-let botHand = 0;
-let playerHand = 0;
-
 game.addEventListener("click", (e) => {
 
     if (e.target.id === "paper" || e.target.parentNode.id === "paper"){
-
         playerHand = 1
-
         startFight()
 
     } else if (e.target.id === "scissors" || e.target.parentNode.id === "scissors"){
-
         playerHand = 2
-
         startFight()
 
     } else if (e.target.id === "rock" || e.target.parentNode.id === "rock"){
-
         playerHand = 3
+        startFight()
 
+    }  else if (e.target.id === "lizard" || e.target.parentNode.id === "lizard"){
+        playerHand = 4
+        startFight()
+
+    } else if (e.target.id === "spock" || e.target.parentNode.id === "spock"){
+        playerHand = 5
         startFight()
 
     } else if (e.target.id === "playAgain"){
         fightArea.innerHTML = "";
         fightArea.classList.remove("animationRoundEnd");
         fightArea.classList.add("d-none");
-        gameContent.classList.remove("d-none");
+        if (!switchGame.classList.contains("active")){
+            gameContent.classList.remove("d-none");
+        } else {
+            gameLizardSpock.classList.remove("d-none");
+        }
     }
 
+    if (e.target.id === "switchGame" || e.target.parentNode.id === "switchGame") {
+
+        switchGame.classList.toggle("active")
+
+        if (switchGame.classList.contains("active")){ 
+    
+            if (fightArea.classList.contains("d-none")){
+                gameContent.classList.add("d-none")
+                gameLizardSpock.classList.remove("d-none");
+            }
+            document.querySelector("#imgGame").setAttribute("src","./images/logo-bonus.svg")
+            document.querySelector("#imgRules").setAttribute("src","./images/image-rules-bonus.svg")
+    
+        } else {
+    
+            if (fightArea.classList.contains("d-none")){
+                gameContent.classList.remove("d-none")
+                gameLizardSpock.classList.add("d-none");
+            }
+            document.querySelector("#imgGame").setAttribute("src","./images/logo.svg")
+            document.querySelector("#imgRules").setAttribute("src","./images/image-rules.svg")
+        }
+    }
 
 })
-
-const gameContent = document.querySelector("#game-content");
-const fightArea = document.querySelector("#fight-area");
 
 function startFight () {
 
@@ -63,37 +87,31 @@ function startFight () {
         const isWin = document.createElement("div");
         isWin.classList.add("popupWinOrLoose")
     
-        if (playerHand === 1 && botHand === 3 ){
+        if ((playerHand === 1 && botHand === 3) || 
+            (playerHand === 3 && botHand === 2) ||
+            (playerHand === 2 && botHand === 1) ||
+            (playerHand === 3 && botHand === 4) ||
+            (playerHand === 4 && botHand === 5) ||
+            (playerHand === 5 && botHand === 2) ||
+            (playerHand === 2 && botHand === 4) ||
+            (playerHand === 1 && botHand === 5) ||
+            (playerHand === 4 && botHand === 1) ||
+            (playerHand === 5 && botHand === 3)){
     
             isWin.innerHTML = "<span>you win</span>";
             score++;
             handPlayerDisplay.classList.add("animatedWin");
     
-        } else if (playerHand === 3 && botHand === 2){
-    
-            isWin.innerHTML = "<span>you win</span>";
-            score++;
-            handPlayerDisplay.classList.add("animatedWin");
-    
-        } else if (playerHand === 2 && botHand === 1){
-    
-            isWin.innerHTML = "<span>you win</span>";
-            score++;
-            handPlayerDisplay.classList.add("animatedWin");
-    
-        } else if (botHand === 1 && playerHand === 3 ){
-    
-            isWin.innerHTML = "<span>you lose</span>";
-            score--;
-            handBotDisplay.classList.add("animatedWin");
-    
-        } else if (botHand === 3 && playerHand === 2){
-    
-            isWin.innerHTML = "<span>you lose</span>";
-            score--;
-            handBotDisplay.classList.add("animatedWin");
-    
-        } else if (botHand === 2 && playerHand === 1){
+        } else if ((botHand === 1 && playerHand === 3) ||
+                   (botHand === 3 && playerHand === 2) ||
+                   (botHand === 2 && playerHand === 1) ||
+                   (botHand === 3 && playerHand === 4) ||
+                   (botHand === 4 && playerHand === 5) ||
+                   (botHand === 5 && playerHand === 2) ||
+                   (botHand === 2 && playerHand === 4) ||
+                   (botHand === 1 && playerHand === 5) ||
+                   (botHand === 4 && playerHand === 1) ||
+                   (botHand === 5 && playerHand === 3)){
     
             isWin.innerHTML = "<span>you lose</span>";
             score--;
@@ -108,43 +126,36 @@ function startFight () {
         isWin.innerHTML += "<button id='playAgain'>play again</button>"
 
         fightArea.classList.add("animationRoundEnd");
-    
-        fightArea.insertBefore(isWin,handBotDisplay);
+
+        setTimeout (() =>{
+            fightArea.insertBefore(isWin,handBotDisplay);
+        },250)
     
     }, 3200)
 }
 
 let handPlayerDisplay = document.createElement("div");
 let handBotDisplay = document.createElement("div");
-// A OPTIMISER
-function displayFight () {
-    botHand = Math.floor(Math.random() * 3 + 1);
 
-    handPlayerDisplay = document.createElement("div");
-    handBotDisplay = document.createElement("div");
+function displayFight () {
+
+    if (!switchGame.classList.contains("active")){
+        botHand = Math.floor(Math.random() * 3 + 1);
+    } else {
+        botHand = Math.floor(Math.random() * 5 + 1);  
+    }
+
+    handPlayerDisplay = ManageDisplay(playerHand);
+    handBotDisplay = ManageDisplay(botHand);
 
     fightArea.classList.remove("d-none");
     gameContent.classList.add("d-none");
+    gameLizardSpock.classList.add("d-none");
 
     handPlayerDisplay.classList.add("handPlayPlayer");
 
-    switch (playerHand){
-        case 1:
-            handPlayerDisplay.classList.add("paper-hand");
-            handPlayerDisplay.innerHTML = '<img src="./images/icon-paper.svg" alt="">'
-            fightArea.appendChild(handPlayerDisplay);
-        break;
-        case 2:
-            handPlayerDisplay.classList.add("scissors-hand");
-            handPlayerDisplay.innerHTML = '<img src="./images/icon-scissors.svg" alt="">'
-            fightArea.appendChild(handPlayerDisplay);
-        break;
-        case 3:
-            handPlayerDisplay.classList.add("rock-hand");
-            handPlayerDisplay.innerHTML = '<img src="./images/icon-rock.svg" alt="">'
-            fightArea.appendChild(handPlayerDisplay);
-        break;
-    }
+
+    fightArea.appendChild(handPlayerDisplay);
 
     const placeHolderBot = document.createElement("div");
     placeHolderBot.classList.add("botPlaceHolder");
@@ -156,48 +167,39 @@ function displayFight () {
         
         fightArea.removeChild(placeHolderBot);
 
-        switch (botHand){
-            case 1:
-                handBotDisplay.classList.add("paper-hand");
-                handBotDisplay.innerHTML = '<img src="./images/icon-paper.svg" alt="">'
-                fightArea.appendChild(handBotDisplay);
-            break;
-            case 2:
-                handBotDisplay.classList.add("scissors-hand");
-                handBotDisplay.innerHTML = '<img src="./images/icon-scissors.svg" alt="">'
-                fightArea.appendChild(handBotDisplay);
-            break;
-            case 3:
-                handBotDisplay.classList.add("rock-hand");
-                handBotDisplay.innerHTML = '<img src="./images/icon-rock.svg" alt="">'
-                fightArea.appendChild(handBotDisplay);
-            break;
-        }
+        fightArea.appendChild(handBotDisplay);
 
     }, 1500)
 }
 
-// A FAIRE
+function ManageDisplay (namePlayer) {
 
-// function ManageDisplay (namePlayer) {
-//         switch (botHand){
-//             case 1:
-//                 handBotDisplay.classList.add("paper-hand");
-//                 handBotDisplay.innerHTML = '<img src="./images/icon-paper.svg" alt="">'
-//                 fightArea.appendChild(handBotDisplay);
-//             break;
-//             case 2:
-//                 handBotDisplay.classList.add("scissors-hand");
-//                 handBotDisplay.innerHTML = '<img src="./images/icon-scissors.svg" alt="">'
-//                 fightArea.appendChild(handBotDisplay);
-//             break;
-//             case 3:
-//                 handBotDisplay.classList.add("rock-hand");
-//                 handBotDisplay.innerHTML = '<img src="./images/icon-rock.svg" alt="">'
-//                 fightArea.appendChild(handBotDisplay);
-//             break;
-//         }
-// }
+        const handZ = document.createElement("div");
+        
+        switch (namePlayer){
+            case 1:
+                handZ.classList.add("paper-hand");
+                handZ.innerHTML = '<img src="./images/icon-paper.svg" alt="">'
+            break;
+            case 2:
+                handZ.classList.add("scissors-hand");
+                handZ.innerHTML = '<img src="./images/icon-scissors.svg" alt="">'
+            break;
+            case 3:
+                handZ.classList.add("rock-hand");
+                handZ.innerHTML = '<img src="./images/icon-rock.svg" alt="">'
+            break;
+            case 4:
+                handZ.classList.add("lizard-hand");
+                handZ.innerHTML = '<img src="./images/icon-lizard.svg" alt="">'
+            break;
+            case 5:
+                handZ.classList.add("spock-hand");
+                handZ.innerHTML = '<img src="./images/icon-spock.svg" alt="">'
+            break;
+        }
+        return handZ;
+}
 
 
 

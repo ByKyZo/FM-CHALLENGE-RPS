@@ -13,7 +13,8 @@ html {
   font-family: "Barlow Semi Condensed", sans-serif;
   color: white;
 }
-body{
+
+body {
   overflow: hidden;
 }
 
@@ -33,8 +34,7 @@ body{
 @media (max-width: 1000px) {
   .game__btn-rules {
     right: 50%;
-/*     bottom: 90px; */
-    bottom: 50px;
+    bottom: 90px;
     transform: translateX(50%);
   }
 }
@@ -68,6 +68,9 @@ body{
   align-items: center;
   justify-content: center;
 }
+.game__rules #imgRules {
+  width: 85%;
+}
 @media (max-width: 400px) {
   .game__rules {
     width: 350px;
@@ -98,6 +101,7 @@ body{
 
 .paper-hand {
   position: relative;
+  box-sizing: unset;
   height: 155px;
   width: 155px;
   display: flex;
@@ -105,9 +109,10 @@ body{
   align-items: center;
   border-radius: 50%;
   background-color: white;
-  box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5);
   z-index: 999;
   transition: transform 0.5s;
+  box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5), 0 10px 0 #2945c2;
+  border: 22px solid #4865f4;
 }
 @media (max-width: 1000px) {
   .paper-hand {
@@ -115,43 +120,19 @@ body{
     width: 100px;
   }
 }
+@media (max-width: 1000px) {
+  .paper-hand {
+    border: 14px solid #4865f4;
+    box-shadow: inset 0 5px 0 rgba(187, 191, 216, 0.5), 0 5px 0 #2945c2;
+  }
+}
 .paper-hand img {
   width: 43%;
-}
-.paper-hand::before {
-  content: "";
-  box-sizing: unset;
-  position: absolute;
-  top: -21px;
-  left: -21px;
-  height: 99%;
-  width: 99%;
-  border-radius: 50%;
-  z-index: 999;
-  border: 22px solid #4865f4;
-  box-shadow: 0 10px 0 #2945c2;
-}
-@media (max-width: 1000px) {
-  .paper-hand::before {
-    top: -13px;
-    left: -13px;
-    height: 98%;
-    width: 98%;
-    border-radius: 50%;
-    z-index: -1;
-    border: 14px solid #ec9e0e;
-    box-shadow: 0 5px 0 #c66d19;
-  }
-}
-@media (max-width: 1000px) {
-  .paper-hand::before {
-    border: 14px solid #4865f4;
-    box-shadow: 0 5px 0 #2945c2;
-  }
 }
 
 .scissors-hand {
   position: relative;
+  box-sizing: unset;
   height: 155px;
   width: 155px;
   display: flex;
@@ -159,9 +140,10 @@ body{
   align-items: center;
   border-radius: 50%;
   background-color: white;
-  box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5);
   z-index: 999;
   transition: transform 0.5s;
+  box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5), 0 10px 0 #c66d19;
+  border: 22px solid #ec9e0e;
 }
 @media (max-width: 1000px) {
   .scissors-hand {
@@ -169,43 +151,19 @@ body{
     width: 100px;
   }
 }
+@media (max-width: 1000px) {
+  .scissors-hand {
+    border: 14px solid #ec9e0e;
+    box-shadow: inset 0 5px 0 rgba(187, 191, 216, 0.5), 0 5px 0 #c66d19;
+  }
+}
 .scissors-hand img {
   width: 43%;
-}
-.scissors-hand::before {
-  content: "";
-  box-sizing: unset;
-  position: absolute;
-  top: -21px;
-  left: -21px;
-  height: 99%;
-  width: 99%;
-  border-radius: 50%;
-  z-index: 999;
-  border: 22px solid #ec9e0e;
-  box-shadow: 0 10px 0 #c66d19;
-}
-@media (max-width: 1000px) {
-  .scissors-hand::before {
-    top: -13px;
-    left: -13px;
-    height: 98%;
-    width: 98%;
-    border-radius: 50%;
-    z-index: -1;
-    border: 14px solid #ec9e0e;
-    box-shadow: 0 5px 0 #c66d19;
-  }
-}
-@media (max-width: 1000px) {
-  .scissors-hand::before {
-    border: 14px solid #ec9e0e;
-    box-shadow: 0 5px 0 #c66d19;
-  }
 }
 
 .rock-hand {
   position: relative;
+  box-sizing: unset;
   height: 155px;
   width: 155px;
   display: flex;
@@ -213,9 +171,10 @@ body{
   align-items: center;
   border-radius: 50%;
   background-color: white;
-  box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5);
   z-index: 999;
   transition: transform 0.5s;
+  box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5), 0 10px 0 #9c1631;
+  border: 22px solid #dc2e4e;
 }
 @media (max-width: 1000px) {
   .rock-hand {
@@ -223,45 +182,83 @@ body{
     width: 100px;
   }
 }
+@media (max-width: 1000px) {
+  .rock-hand {
+    border: 14px solid #dc2e4e;
+    box-shadow: inset 0 5px 0 rgba(187, 191, 216, 0.5), 0 5px 0 #9c1631;
+  }
+}
 .rock-hand img {
   width: 43%;
 }
-.rock-hand::before {
-  content: "";
+
+.lizard-hand {
+  position: relative;
   box-sizing: unset;
-  position: absolute;
-  top: -21px;
-  left: -21px;
-  height: 99%;
-  width: 99%;
+  height: 155px;
+  width: 155px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
+  background-color: white;
   z-index: 999;
-  border: 22px solid #dc2e4e;
-  box-shadow: 0 10px 0 #9c1631;
+  transition: transform 0.5s;
+  box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5), 0 10px 0 #6038ab;
+  border: 22px solid #834fe3;
 }
 @media (max-width: 1000px) {
-  .rock-hand::before {
-    top: -13px;
-    left: -13px;
-    height: 98%;
-    width: 98%;
-    border-radius: 50%;
-    z-index: -1;
-    border: 14px solid #ec9e0e;
-    box-shadow: 0 5px 0 #c66d19;
+  .lizard-hand {
+    height: 100px;
+    width: 100px;
   }
 }
 @media (max-width: 1000px) {
-  .rock-hand::before {
-    border: 14px solid #dc2e4e;
-    box-shadow: 0 5px 0 #9c1631;
+  .lizard-hand {
+    border: 14px solid #834fe3;
+    box-shadow: inset 0 5px 0 rgba(187, 191, 216, 0.5), 0 5px 0 #6038ab;
   }
+}
+.lizard-hand img {
+  width: 43%;
+}
+
+.spock-hand {
+  position: relative;
+  box-sizing: unset;
+  height: 155px;
+  width: 155px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 999;
+  transition: transform 0.5s;
+  box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5), 0 10px 0 #2a8daa;
+  border: 22px solid #40b9ce;
+}
+@media (max-width: 1000px) {
+  .spock-hand {
+    height: 100px;
+    width: 100px;
+  }
+}
+@media (max-width: 1000px) {
+  .spock-hand {
+    border: 14px solid #40b9ce;
+    box-shadow: inset 0 5px 0 rgba(187, 191, 216, 0.5), 0 5px 0 #2a8daa;
+  }
+}
+.spock-hand img {
+  width: 43%;
 }
 
 #fight-area {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 300px;
   width: 500px;
 }
 @media (max-width: 1000px) {
@@ -378,7 +375,7 @@ body{
     transform: scale(0.5);
   }
   100% {
-    transform: scale(1.5);
+    transform: scale(1.3);
   }
 }
 @keyframes mooveHandMobile {
@@ -417,23 +414,13 @@ body{
     animation: none;
   }
 }
-@media (max-width: 1000px) {
-  @keyframes winAnimation {
-    0% {
-      box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5), 0 0 0 60px rgba(255, 255, 255, 0.06), 0 0 0 125px rgba(255, 255, 255, 0.04), 0 0 0 200px rgba(255, 255, 255, 0.02);
-    }
-    100% {
-      box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5), 0 0 0 70px rgba(255, 255, 255, 0.08), 0 0 0 135px rgba(255, 255, 255, 0.06), 0 0 0 210px rgba(255, 255, 255, 0.04);
-    }
-  }
-}
 @keyframes winAnimation {
   0% {
-    transform: scale(1.5);
+    transform: scale(1.3);
     box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5), 0 0 0 60px rgba(255, 255, 255, 0.06), 0 0 0 125px rgba(255, 255, 255, 0.04), 0 0 0 200px rgba(255, 255, 255, 0.02);
   }
   100% {
-    transform: scale(1.5);
+    transform: scale(1.3);
     box-shadow: inset 0 10px 0 rgba(187, 191, 216, 0.5), 0 0 0 70px rgba(255, 255, 255, 0.08), 0 0 0 135px rgba(255, 255, 255, 0.06), 0 0 0 210px rgba(255, 255, 255, 0.04);
   }
 }
@@ -469,9 +456,14 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  position: relative;
+}
+@media (max-width: 1000px) {
+  .game {
+    justify-content: unset;
+  }
 }
 .game__header {
+  position: relative;
   width: 700px;
   height: 150px;
   border: 3px solid #606e85;
@@ -482,13 +474,26 @@ body{
   padding: 25px;
   margin: 0 20px;
 }
+@media (max-width: 1000px) {
+  .game__header {
+    margin: 40px 20px 150px 20px;
+  }
+}
 @media (max-width: 730px) {
   .game__header {
     width: 90%;
   }
 }
+.game__header__logo {
+  cursor: pointer;
+  transition: 0.5s;
+}
 .game__header__logo img {
   width: 100%;
+}
+.game__header__logo:hover {
+  transition: 0.5s;
+  transform: scale(1.05);
 }
 .game__header__score {
   background-color: #fafafa;
@@ -524,6 +529,7 @@ body{
 .game__content {
   position: relative;
   display: flex;
+  height: 300px;
   animation: popWinAnimation 1s forwards;
 }
 @media (max-width: 1000px) {
@@ -545,34 +551,256 @@ body{
   transition: 0.1s;
 }
 .game__content__hands--paper {
-  top: -70px;
-  left: -60px;
+  top: -95px;
+  left: -80px;
 }
 @media (max-width: 1000px) {
   .game__content__hands--paper {
-    top: -35px;
-    left: -30px;
+    top: -50px;
+    left: -50px;
   }
 }
 .game__content__hands--scissors {
-  top: -70px;
-  right: -60px;
+  top: -95px;
+  right: -80px;
 }
 @media (max-width: 1000px) {
   .game__content__hands--scissors {
-    top: -35px;
-    right: -30px;
+    top: -50px;
+    right: -50px;
   }
 }
 .game__content__hands--rock {
-  bottom: -25px;
-  left: 70px;
+  bottom: -35px;
+  left: 50px;
 }
 @media (max-width: 1000px) {
   .game__content__hands--rock {
-    bottom: 0;
-    left: 55px;
+    bottom: 70px;
+    left: 40px;
   }
+}
+.game__content__lizard-spock {
+  position: relative;
+  height: 300px;
+  animation: popWinAnimation 1s forwards;
+}
+@media (max-width: 1000px) {
+  .game__content__lizard-spock #pentagon {
+    width: 215px;
+    height: 210px;
+  }
+}
+.game__content__lizard-spock__hands {
+  position: absolute !important;
+  cursor: pointer;
+}
+.game__content__lizard-spock__hands:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+.game__content__lizard-spock__hands:active {
+  transform: scale(0.9);
+  transition: 0.1s;
+}
+.game__content__lizard-spock__hands--paper {
+  top: 30px;
+  right: -85px;
+  position: relative;
+  box-sizing: unset;
+  height: 118px;
+  width: 118px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 999;
+  transition: transform 0.5s;
+  box-shadow: inset 0 8px 0 rgba(187, 191, 216, 0.5), 0 8px 0 #2945c2;
+  border: 18px solid #4865f4;
+}
+@media (max-width: 1000px) {
+  .game__content__lizard-spock__hands--paper {
+    height: 80px;
+    width: 80px;
+  }
+}
+@media (max-width: 1000px) {
+  .game__content__lizard-spock__hands--paper {
+    border: 10px solid #4865f4;
+    box-shadow: inset 0 5px 0 rgba(187, 191, 216, 0.5), 0 5px 0 #2945c2;
+  }
+}
+.game__content__lizard-spock__hands--paper img {
+  width: 43%;
+}
+@media (max-width: 1000px) {
+  .game__content__lizard-spock__hands--paper {
+    top: 25px;
+    right: -55px;
+  }
+}
+.game__content__lizard-spock__hands--scissors {
+  top: -80px;
+  right: 85px;
+  position: relative;
+  box-sizing: unset;
+  height: 118px;
+  width: 118px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 999;
+  transition: transform 0.5s;
+  box-shadow: inset 0 8px 0 rgba(187, 191, 216, 0.5), 0 8px 0 #c66d19;
+  border: 18px solid #ec9e0e;
+}
+@media (max-width: 1000px) {
+  .game__content__lizard-spock__hands--scissors {
+    height: 80px;
+    width: 80px;
+  }
+}
+@media (max-width: 1000px) {
+  .game__content__lizard-spock__hands--scissors {
+    border: 10px solid #ec9e0e;
+    box-shadow: inset 0 5px 0 rgba(187, 191, 216, 0.5), 0 5px 0 #c66d19;
+  }
+}
+.game__content__lizard-spock__hands--scissors img {
+  width: 43%;
+}
+@media (max-width: 1000px) {
+  .game__content__lizard-spock__hands--scissors {
+    top: -65px;
+    right: 60px;
+  }
+}
+.game__content__lizard-spock__hands--rock {
+  bottom: -90px;
+  right: -20px;
+  position: relative;
+  box-sizing: unset;
+  height: 118px;
+  width: 118px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 999;
+  transition: transform 0.5s;
+  box-shadow: inset 0 8px 0 rgba(187, 191, 216, 0.5), 0 8px 0 #9c1631;
+  border: 18px solid #dc2e4e;
+}
+@media (max-width: 1000px) {
+  .game__content__lizard-spock__hands--rock {
+    height: 80px;
+    width: 80px;
+  }
+}
+@media (max-width: 1000px) {
+  .game__content__lizard-spock__hands--rock {
+    border: 10px solid #dc2e4e;
+    box-shadow: inset 0 5px 0 rgba(187, 191, 216, 0.5), 0 5px 0 #9c1631;
+  }
+}
+.game__content__lizard-spock__hands--rock img {
+  width: 43%;
+}
+@media (max-width: 1000px) {
+  .game__content__lizard-spock__hands--rock {
+    bottom: 35px;
+    right: -15px;
+  }
+}
+.game__content__lizard-spock__hands--lizard {
+  bottom: -90px;
+  left: -20px;
+  position: relative;
+  box-sizing: unset;
+  height: 118px;
+  width: 118px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 999;
+  transition: transform 0.5s;
+  box-shadow: inset 0 8px 0 rgba(187, 191, 216, 0.5), 0 8px 0 #6038ab;
+  border: 18px solid #834fe3;
+}
+@media (max-width: 1000px) {
+  .game__content__lizard-spock__hands--lizard {
+    height: 80px;
+    width: 80px;
+  }
+}
+@media (max-width: 1000px) {
+  .game__content__lizard-spock__hands--lizard {
+    border: 10px solid #834fe3;
+    box-shadow: inset 0 5px 0 rgba(187, 191, 216, 0.5), 0 5px 0 #6038ab;
+  }
+}
+.game__content__lizard-spock__hands--lizard img {
+  width: 43%;
+}
+@media (max-width: 1000px) {
+  .game__content__lizard-spock__hands--lizard {
+    bottom: 35px;
+    left: -15px;
+  }
+}
+.game__content__lizard-spock__hands--spock {
+  top: 30px;
+  left: -85px;
+  position: relative;
+  box-sizing: unset;
+  height: 118px;
+  width: 118px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 999;
+  transition: transform 0.5s;
+  box-shadow: inset 0 8px 0 rgba(187, 191, 216, 0.5), 0 8px 0 #2a8daa;
+  border: 18px solid #40b9ce;
+}
+@media (max-width: 1000px) {
+  .game__content__lizard-spock__hands--spock {
+    height: 80px;
+    width: 80px;
+  }
+}
+@media (max-width: 1000px) {
+  .game__content__lizard-spock__hands--spock {
+    border: 10px solid #40b9ce;
+    box-shadow: inset 0 5px 0 rgba(187, 191, 216, 0.5), 0 5px 0 #2a8daa;
+  }
+}
+.game__content__lizard-spock__hands--spock img {
+  width: 43%;
+}
+@media (max-width: 1000px) {
+  .game__content__lizard-spock__hands--spock {
+    top: 25px;
+    left: -55px;
+  }
+}
+
+.indicator {
+  position: absolute;
+  bottom: 5px;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  left: 28px;
+  font-style: italic;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,48 +1,26 @@
-@import "./mixins";
-
 // PAPER HAND
 .paper-hand{
-    @include handGlobal;
-    &::before{
-        content: "";
-        @include beforeHandGlobal;
-        border: 22px solid hsl(230, 89%, 62%);
-        box-shadow: 0 10px 0 #2945c2;
-        @media (max-width: 1000px) {
-            border: 14px solid hsl(230, 89%, 62%);
-            box-shadow: 0 5px 0 #2945c2;
-        }
-    }
+    @include handGlobal(hsl(230, 89%, 62%),#2945c2);
 }
 
 // SCISSORS HAND
 .scissors-hand{
-    @include handGlobal;
-    &::before{
-        content: "";
-        @include beforeHandGlobal;
-        border: 22px solid hsl(39, 89%, 49%);
-        box-shadow: 0 10px 0 #c66d19;
-        @media (max-width: 1000px) {
-            border: 14px solid hsl(39, 89%, 49%);
-            box-shadow: 0 5px 0 #c66d19;
-        }
-    }
+    @include handGlobal(hsl(39, 89%, 49%),#c66d19);
 }
 
 // ROCK HAND
 .rock-hand{
-    @include handGlobal;
-    &::before{
-        content: "";
-        @include beforeHandGlobal;
-        border: 22px solid hsl(349, 71%, 52%);
-        box-shadow: 0 10px 0 #9c1631;
-        @media (max-width: 1000px) {
-            border: 14px solid hsl(349, 71%, 52%);
-            box-shadow: 0 5px 0 #9c1631;
-        }
-    }
+    @include handGlobal(hsl(349, 71%, 52%),#9c1631);
+}
+
+//  LIZARD HAND
+.lizard-hand{
+    @include handGlobal(hsl(261, 73%, 60%),#6038ab);
+}
+
+// SPOCK HAND
+.spock-hand{
+    @include handGlobal(hsl(189, 59%, 53%),#2a8daa);
 }
 
 // ARENE
@@ -50,6 +28,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 300px;
     width: 500px;
     @media (max-width: 1000px){
         width: 400px;
@@ -99,7 +78,6 @@
         }
     }
 }
-
 
 // PLACE HOLDER PICK BOT
 .botPlaceHolder{

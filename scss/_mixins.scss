@@ -1,9 +1,8 @@
-@mixin handGlobal {
+@mixin handGlobal ($borderColor,$shadowColor){
     position: relative;
+    box-sizing: unset;
     height: 155px ;
     width: 155px ;
-    // height: 50%;
-    // width: 50%;
     @media(max-width: 1000px){
         height: 100px ;
         width: 100px ;
@@ -12,32 +11,53 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: white; // !important
-    box-shadow: inset 0 10px 0 rgba(187, 191, 216, .5);
+    background-color: white; 
     z-index: 999;
     transition: transform 0.5s;
+    box-shadow: 
+    inset 0 10px 0 rgba(187, 191, 216, .5),
+    0 10px 0 $shadowColor;
+    border: 22px solid $borderColor;
+    @media (max-width: 1000px) {
+        border: 14px solid $borderColor;
+        box-shadow: 
+        inset 0 5px 0 rgba(187, 191, 216, .5),
+        0 5px 0 $shadowColor;
+    }
     img{ 
         width: 43%;
     }
 }
 
-@mixin beforeHandGlobal {
+@mixin lizardSpock ($borderColor,$shadowColor){
+    position: relative;
     box-sizing: unset;
-    position: absolute;
-    top: -21px;
-    left: -21px;
-    height: 99%;
-    width: 99%;
+    height: 118px ;
+    width: 118px ;
+    @media(max-width: 1000px){
+        height: 80px ;
+        width: 80px ;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
+    background-color: white; 
     z-index: 999;
+    transition: transform 0.5s;
+    box-shadow: 
+    inset 0 8px 0 rgba(187, 191, 216, .5),
+    0 8px 0 $shadowColor;
+    border: 18px solid $borderColor;
     @media (max-width: 1000px) {
-        top: -13px;
-        left: -13px;
-        height: 98%;
-        width: 98%;
-        border-radius: 50%;
-        z-index: -1;
-        border: 14px solid #ec9e0e;
-        box-shadow: 0 5px 0 #c66d19;
+        border: 10px solid $borderColor;
+        box-shadow: 
+        inset 0 5px 0 rgba(187, 191, 216, .5),
+        0 5px 0 $shadowColor;
+    }
+    img{ 
+        width: 43%;
     }
 }
+
+

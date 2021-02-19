@@ -20,22 +20,19 @@
 </head>
 <body>
 
+  <!-- GAME -->
   <div id="game" class="game">
 
+    <!-- GAME HEADER -->
     <div class="game__header">
 
-      <!-- <ul class="game__header__title"> A CHANGE EN LOGO SVG IMPORTANT -->
-        <!-- <li>Rock</li>
-        <li>Paper</li>
-        <li>Scissors</li>
-      </ul> -->
+      <div id="switchGame" class="game__header__logo">
 
-      <div class="game__header__logo">
-
-        <img src="./images/logo.svg" alt="">
+        <img id="imgGame" src="./images/logo.svg" alt="">
 
       </div>
 
+      <span class="indicator">click above to change game</span>
 
       <div class="game__header__score">
 
@@ -45,7 +42,9 @@
       </div>
 
     </div>
+    <!-- GAME HEADER END-->
 
+    <!-- ROCK PAPER SCISSORS -->
     <div id="game-content" class="game__content">
 
       <img id="triangle" src="./images/bg-triangle.svg" alt="">
@@ -69,10 +68,51 @@
       </div>
 
     </div>
+    <!-- ROCK PAPER SCISSORS END-->
 
+    <!-- ROCK PAPER SCISSORS LIZARD SPOCK -->
+    <div id="game-content-lizard-spock" class="game__content__lizard-spock d-none"> <!--game__content -->
+
+      <img id="pentagon" src="./images/bg-pentagon.svg" alt="">
+
+      <div id="paper" class="game__content__lizard-spock__hands game__content__lizard-spock__hands--paper paper-hand">
+
+        <img src="./images/icon-paper.svg" alt="">
+
+      </div>
+
+      <div id="scissors" class="game__content__lizard-spock__hands game__content__lizard-spock__hands--scissors scissors-hand">
+
+        <img src="./images/icon-scissors.svg" alt="">
+
+      </div>
+
+      <div id="rock" class="game__content__lizard-spock__hands game__content__lizard-spock__hands--rock rock-hand">
+
+        <img src="./images/icon-rock.svg" alt="">
+
+      </div>
+
+      <div id="lizard" class="game__content__lizard-spock__hands game__content__lizard-spock__hands--lizard lizard-hand">
+
+        <img src="./images/icon-lizard.svg" alt="">
+
+      </div>
+
+      <div id="spock" class="game__content__lizard-spock__hands game__content__lizard-spock__hands--spock spock-hand">
+
+        <img src="./images/icon-spock.svg" alt="">
+
+      </div>
+
+    </div>
+    <!-- ROCK PAPER SCISSORS LIZARD SPOCK END-->
+
+    <!-- FIGHT AREA -->
     <div id="fight-area" class="d-none"></div>
+    <!-- FIGHT AREA END -->
 
-
+    <!-- RULES -->
     <button id="btn-rules" class="game__btn-rules">Rules</button> 
 
     <div id="rules" class="background-rules d-none">
@@ -87,11 +127,12 @@
 
         </div>
 
-        <img src="./images/image-rules.svg" alt="">
+        <img id="imgRules" src="./images/image-rules.svg" alt="">
 
       </div>
 
     </div>
+    <!-- RULES END -->
 
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 

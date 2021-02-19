@@ -1,8 +1,10 @@
 @import "./variables";
 @import "./base";
 @import "./rules";
+@import "./mixins";
 @import "./game__hands";
 @import "./animations";
+
 
 .game{
     height: 100vh;
@@ -11,8 +13,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    position: relative;
+    @media (max-width: 1000px){
+        justify-content: unset;
+    }
     &__header{
+        position: relative;
         width: 700px;
         height: 150px;
         border: 3px solid $HeaderOutline; // A VOIR
@@ -22,12 +27,21 @@
         align-items: center;
         padding: 25px;
         margin: 0 20px;
+        @media (max-width: 1000px){
+            margin: 40px 20px 150px 20px;
+        }
         @media (max-width: 730px){
             width: 90%;
         }
         &__logo{
+            cursor: pointer;
+            transition: 0.5s;
             img{
                 width: 100%;
+            }
+            &:hover{
+                transition: 0.5s;
+                transform: scale(1.05);
             }
         }
         &__score{
@@ -60,7 +74,8 @@
     }
     &__content{
         position: relative;
-        display: flex; // A VOIR
+        display: flex;
+        height: 300px;
         animation: popWinAnimation 1s forwards;
         #triangle{
             @media (max-width: 1000px){
@@ -80,29 +95,106 @@
                 transition: 0.1s;
             }
             &--paper{
-                top: -70px ;
-                left: -60px ;
+                top: -95px;
+                left: -80px;
                 @media (max-width: 1000px){
-                    top: -35px;
-                    left: -30px;
+                    top: -50px;
+                    left: -50px;
                 }
             }
             &--scissors{
-                top: -70px ;
-                right: -60px ;
+                top: -95px;
+                right: -80px;
                 @media (max-width: 1000px){
-                    top: -35px;
-                    right: -30px;
+                    top: -50px;
+                    right: -50px;
                 }
             }
             &--rock{
-                bottom: -25px ;
-                left: 70px ;
+                bottom: -35px;
+                left: 50px;
                 @media (max-width: 1000px){
-                    bottom: 0;
-                    left: 55px ;
+                    bottom: 70px;
+                    left: 40px;
+                }
+            }
+        }
+        &__lizard-spock{
+            position: relative;
+            height: 300px;
+            animation: popWinAnimation 1s forwards;
+            #pentagon{
+                @media (max-width: 1000px){
+                    width: 215px;
+                    height: 210px;
+                }
+            }
+            &__hands{
+                position: absolute !important;
+                cursor: pointer;
+                &:hover{
+                    transform: scale(1.05);
+                    transition: 0.3s;
+                }
+                &:active{
+                    transform: scale(0.9);
+                    transition: 0.1s;
+                }
+                &--paper{
+                    top: 30px;
+                    right: -85px;
+                    @include lizardSpock(hsl(230, 89%, 62%),#2945c2);
+                    @media (max-width: 1000px){
+                        top: 25px;
+                        right: -55px;
+                    }
+                }
+                &--scissors{
+                    top: -80px;
+                    right: 85px;
+                    @include lizardSpock(hsl(39, 89%, 49%),#c66d19);
+                    @media (max-width: 1000px){
+                        top: -65px;
+                        right: 60px;
+                    }
+                }
+                &--rock{
+                    bottom: -90px;
+                    right: -20px;
+                    @include lizardSpock(hsl(349, 71%, 52%),#9c1631);
+                    @media (max-width: 1000px){
+                        bottom: 35px;
+                        right: -15px;
+                    }
+                }
+                &--lizard{
+                    bottom: -90px;
+                    left: -20px;
+                    @include lizardSpock(hsl(261, 73%, 60%),#6038ab);
+                    @media (max-width: 1000px){
+                        bottom: 35px;
+                        left: -15px;
+                    }
+                }
+                &--spock{
+                    top: 30px;
+                    left: -85px;
+                    @include lizardSpock(hsl(189, 59%, 53%),#2a8daa);
+                    @media (max-width: 1000px){
+                        top: 25px;
+                        left: -55px;
+                    }
                 }
             }
         }
     }
+}
+
+.indicator{
+    position: absolute;
+    bottom: 5px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    left: 28px;
+    font-style: italic;
 }
