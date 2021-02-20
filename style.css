@@ -449,6 +449,14 @@ body {
     transform: scale(1);
   }
 }
+@keyframes indicatorAnimation {
+  0% {
+    transform: rotateZ(0) scale(0);
+  }
+  100% {
+    transform: rotateZ(360deg) scale(1.2);
+  }
+}
 .game {
   height: 100vh;
   background: radial-gradient(circle, #1d3050 25%, #15193c 100%);
@@ -796,11 +804,20 @@ body {
 
 .indicator {
   position: absolute;
-  bottom: 5px;
+  top: -20px;
   font-size: 0.8rem;
   letter-spacing: 1px;
-  left: 28px;
+  left: 100px;
   font-style: italic;
+  transform: scale(0);
+  animation: 0.5s 3s indicatorAnimation forwards;
+}
+.indicator img {
+  width: 20%;
+  position: absolute;
+  bottom: -43px;
+  left: 42px;
+  transform: rotateZ(150deg);
 }
 
 /*# sourceMappingURL=style.css.map */

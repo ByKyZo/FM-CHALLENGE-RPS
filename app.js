@@ -56,6 +56,8 @@ game.addEventListener("click", (e) => {
 
         switchGame.classList.toggle("active")
 
+        document.querySelector(".indicator").classList.add("d-none");
+
         if (switchGame.classList.contains("active")){ 
     
             if (fightArea.classList.contains("d-none")){
@@ -77,7 +79,7 @@ game.addEventListener("click", (e) => {
     }
 
 })
-
+// WIN CONDITION 
 function startFight () {
 
     displayFight();
