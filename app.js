@@ -20,24 +20,24 @@ function fScoreDisplay (){
 }
 
 game.addEventListener("click", (e) => {
-
-    if (e.target.id === "paper" || e.target.parentNode.id === "paper"){
+    
+    if (e.target.classList.contains("paper") || e.target.parentNode.classList.contains("paper")){
         playerHand = 1
         startFight()
 
-    } else if (e.target.id === "scissors" || e.target.parentNode.id === "scissors"){
+    } else if (e.target.classList.contains("scissors") || e.target.parentNode.classList.contains("scissors")){
         playerHand = 2
         startFight()
 
-    } else if (e.target.id === "rock" || e.target.parentNode.id === "rock"){
+    } else if (e.target.classList.contains("rock") || e.target.parentNode.classList.contains("rock")){
         playerHand = 3
         startFight()
 
-    }  else if (e.target.id === "lizard" || e.target.parentNode.id === "lizard"){
+    }  else if (e.target.classList.contains("lizard") || e.target.parentNode.classList.contains("lizard")){
         playerHand = 4
         startFight()
 
-    } else if (e.target.id === "spock" || e.target.parentNode.id === "spock"){
+    } else if (e.target.classList.contains("spock") || e.target.parentNode.classList.contains("spock")){
         playerHand = 5
         startFight()
 
