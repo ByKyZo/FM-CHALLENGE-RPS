@@ -20,7 +20,7 @@ function fScoreDisplay (){
 }
 
 game.addEventListener("click", (e) => {
-    
+
     if (e.target.classList.contains("paper") || e.target.parentNode.classList.contains("paper")){
         playerHand = 1
         startFight()

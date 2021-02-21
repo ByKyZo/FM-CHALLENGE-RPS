@@ -35,7 +35,9 @@
         }
         &__logo{
             cursor: pointer;
-            transition: 0.5s;
+            transition: scale 0.5s;
+            background-color: transparent;
+            border: none;
             img{
                 width: 100%;
             }
