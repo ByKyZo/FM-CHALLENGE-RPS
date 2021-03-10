@@ -265,8 +265,8 @@ body {
 }
 @media (max-width: 1000px) {
   #fight-area {
+    height: 0;
     width: 400px;
-    margin-bottom: 350px;
     justify-content: space-around;
   }
 }
